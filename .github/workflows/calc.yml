@@ -37,7 +37,7 @@ jobs:
         run: mvn clean install --file pom.xml
       
       - name: Copy Coverage To Predictable Location
-        run: cp coverage/**/coverage.cobertura.xml coverage.cobertura.xml
+        run: cp */coverage.cobertura.xml coverage.cobertura.xml
       
       - name: Code Coverage Summary Report
         uses: irongut/CodeCoverageSummary@v1.2.0
