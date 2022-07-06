@@ -28,6 +28,14 @@ jobs:
         
       - name: Create folder
         run: mkdir coverage.cobertura.xml
+        
+      - name: Multi-line script
+        run: |
+          echo 1. what is in this directory
+          ls -a
+          echo
+          echo 2. Where is coberture
+          echo $coverage/**/coverage.cobertura.xml
 
       # Runs a single command using the runners shell
       - name: Set up JDK 1.8
