@@ -25,6 +25,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout main branch from GitHub
         uses: actions/checkout@v3
+        
+      - name: Create folder
+        run: mkdir coverage.cobertura.xml
 
       # Runs a single command using the runners shell
       - name: Set up JDK 1.8
@@ -36,8 +39,8 @@ jobs:
       - name: GitHub Actions Build Maven project
         run: mvn clean install --file pom.xml
       
-      #- name: Copy Coverage To Predictable Location
-      #  run: cp */coverage.cobertura.xml coverage.cobertura.xml
+      - name: Copy Coverage To Predictable Location
+        run: cp coverage/**/coverage.cobertura.xml coverage.cobertura.xml
       
       - name: Code Coverage Summary Report
         uses: irongut/CodeCoverageSummary@v1.2.0
