@@ -35,7 +35,7 @@ jobs:
           ls -a
           echo
           echo 2. Where is coberture
-          echo $coverage/**/coverage.cobertura.xml
+          locate --basename coverage/**/coverage.cobertura.xml
 
       # Runs a single command using the runners shell
       - name: Set up JDK 1.8
